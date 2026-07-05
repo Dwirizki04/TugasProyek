@@ -19,7 +19,7 @@
             echo "<tr>
                 <td>" . $row['nim'] . "</td>
                 <td>" . $row['nama'] . "</td>
-                <td>" . $row['jenis_kelamin'] . "</td>
+                <td>" . ($row['jenis_kelamin'] == 'L' ? 'Laki-Laki' : 'Perempuan') . "</td>
                 <td>" . $row['alamat'] . "</td>
                 <td>
                     <a href='edit.php?id=" . $row['id'] . "'>Edit</a> | 
