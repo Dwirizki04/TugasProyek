@@ -12,10 +12,10 @@
         <th>Aksi</th>
     </tr>
     <?php
-    $data = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
-    $row = mysqli_fetch_array($data);
-    if ($row) {
-        while ($row) {
+    $result = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+    if (count($rows) > 0) {
+        foreach ($rows as $row) {
             echo "<tr>
                 <td>" . $row['nim'] . "</td>
                 <td>" . $row['nama'] . "</td>
@@ -28,7 +28,7 @@
             </tr>";
         }
     } else {
-        echo "<tr><td colspan='5'>Belum ada data.</td></tr>";
+        "<tr><td colspan='5'>Data tidak ditemukan.</td></tr>";
     }
     ?>
 </table>
