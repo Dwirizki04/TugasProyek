@@ -10,8 +10,8 @@
 
     <p><label>Jenis Kelamin:</label><br>
         <select name="jenis_kelamin">
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
         </select>
     </p>
 
