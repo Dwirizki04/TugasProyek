@@ -5,10 +5,10 @@ include 'koneksi.php';
 $id = $_GET['id'];
 
 $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE id='$id'");
-$data = mysqli_fetch_array($query);
+$data = $query->fetch_array(MYSQLI_ASSOC);
 ?>
 
-<h2>Edit Data Mahasiswa</h2>
+<h1>Edit Data Mahasiswa</h1>
 <form action="proses_edit.php" method="POST">
     <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 
@@ -20,8 +20,8 @@ $data = mysqli_fetch_array($query);
 
     <label>Jenis Kelamin:</label><br>
     <select name="jenis_kelamin">
-        <option value="Laki-laki" <?php if ($data['jenis_kelamin'] == 'Laki-laki') echo 'selected'; ?>>Laki-laki</option>
-        <option value="Perempuan" <?php if ($data['jenis_kelamin'] == 'Perempuan') echo 'selected'; ?>>Perempuan</option>
+        <option value="L" <?php if ($data['jenis_kelamin'] == 'L') echo 'selected'; ?>>Laki-laki</option>
+        <option value="P" <?php if ($data['jenis_kelamin'] == 'P') echo 'selected'; ?>>Perempuan</option>
     </select><br><br>
 
     <label>Alamat:</label><br>
